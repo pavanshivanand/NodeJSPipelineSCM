@@ -10,7 +10,7 @@ node() {
        stage('NPM Install'){
          sh 'node -v'
          dir('users-service') {
-			sh "npm install --unsafe-perm node-sass"
+			sh "npm install"
 		 }
        }
        stage('NPM Unit Test'){

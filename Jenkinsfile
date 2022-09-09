@@ -10,7 +10,10 @@ node() {
        stage('NPM Install'){
          sh 'node -v'
          dir('users-service') {
-			sh "npm install"
+   nodejs('NodeJS'){
+   sh "npm install"
+   }
+			
 		 }
        }
        stage('NPM Unit Test'){

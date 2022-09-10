@@ -10,19 +10,16 @@ node() {
        stage('NPM Install'){
          sh 'node -v'
          dir('users-service') {
-   nodejs('NodeJS'){
-   bat "npm install"
-   }
-			
+   bat "npm install"		
 		 }
        }
+	    /*
        stage('NPM Unit Test'){
 		 dir('users-service') {
-	                nodejs('NodeJS'){
 			bat "npm test"
-			}
 		 }
        }
+       */
 
        stage('Container Build'){
 		 sh "docker-compose build --force"

@@ -35,7 +35,7 @@ node() {
 		    bat "npm install && npm start"
 		 }
        }
-	   
+	 /*  
        stage('Cleanup'){
 		 bat 'npm cache clean'
 		 sh 'docker-compose down'
@@ -47,7 +47,7 @@ node() {
                      to: 'pavanshivanand@gmail.com'
        }
 
-
+*/
 
     }
     catch (err) {

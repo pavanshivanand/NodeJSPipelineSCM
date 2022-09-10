@@ -18,7 +18,9 @@ node() {
        }
        stage('NPM Unit Test'){
 		 dir('users-service') {
+	                nodejs('NodeJS'){
 			bat "npm test"
+			}
 		 }
        }
 

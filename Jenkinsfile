@@ -11,14 +11,14 @@ node() {
          sh 'node -v'
          dir('users-service') {
    nodejs('NodeJS'){
-   sh "npm install"
+   bat "npm install"
    }
 			
 		 }
        }
        stage('NPM Unit Test'){
 		 dir('users-service') {
-			sh "npm test"
+			bat "npm test"
 		 }
        }
 
@@ -33,12 +33,12 @@ node() {
 	   stage('Node Integration Testing'){
 		 dir('integration-test') {
 		    sleep 20
-		    sh "npm install && npm start"
+		    bat "npm install && npm start"
 		 }
        }
 	   
        stage('Cleanup'){
-		 sh 'npm cache clean'
+		 bat 'npm cache clean'
 		 sh 'docker-compose down'
 
          mail body: 'project build successful',
